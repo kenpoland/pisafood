@@ -117,4 +117,9 @@
   </div>
 
   <h2>🗺️ Map of All Locations</h2>
-  <p>To embed
+  <p>To embed your custom map, create one in <a href="https://www.google.com/mymaps" target="_blank">Google My Maps</a>, make it public, and paste the embed link below:</p>
+
+  <iframe src="https://www.google.com/maps/d/embed?mid=YOUR_CUSTOM_MAP_ID"></iframe>
+
+</body>
+</html>
