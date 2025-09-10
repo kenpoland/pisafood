@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gravel Cycling Route: Lucca to Empoli</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+    header { background: #4CAF50; color: white; padding: 1em; text-align: center; }
+    section { padding: 1em 2em; }
+    h2 { color: #4CAF50; }
+    #map { height: 400px; margin: 1em 0; }
+    ul { list-style-type: square; margin-left: 1em; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gravel Cycling Route: Lucca to Empoli</h1>
+    <p>Easy, scenic ride with a Tuscan lunch stop</p>
+  </header>
+
+  <section>
+    <h2>Route Overview 🚴‍♂️</h2>
+    <ul>
+      <li><strong>Distance:</strong> ~70 km</li>
+      <li><strong>Elevation Gain:</strong> ~250 m</li>
+      <li><strong>Surface:</strong> ~60% gravel, 40% quiet paved roads</li>
+      <li><strong>Estimated Time:</strong> 4–5 hours with lunch break</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Turn-by-Turn Directions 🗺️</h2>
+    <ol>
+      <li>Start at Via Borgo Giannotti 19, Lucca</li>
+      <li>Follow Serchio River Path east (~10 km)</li>
+      <li>Cross Ponte a Moriano, continue on Via di Poggio to Capannori</li>
+      <li>Take Via delle Ville through olive groves</li>
+      <li>Join Via Francigena trail toward Altopascio</li>
+      <li>Follow Via Romana Vecchia to Fucecchio</li>
+      <li><strong>Lunch Stop:</strong> Ristorante La Buca or Osteria del Gambero Rosso</li>
+      <li>Continue via Via di Burello to Cerreto Guidi</li>
+      <li>Ride Via di Monterappoli into Empoli</li>
+      <li>Finish at Piazza Don Minzoni 18</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Nearby Attractions in Empoli 🎨</h2>
+    <ul>
+      <li><strong>Collegiata Sant'Andrea:</strong> Romanesque church with historic art</li>
+      <li><strong>Museum of Glass:</strong> Empoli’s glassmaking heritage</li>
+      <li><strong>Parco di Serravalle:</strong> Green space for relaxing</li>
+      <li><strong>Fontana dei Leoni:</strong> Iconic fountain in Piazza Farinata degli Uberti</li>
+      <li><strong>Murales & Street Art:</strong> Modern touches in historic settings</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Route Map 🗺️</h2>
+    <div id="map"></div>
+  </section>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([43.7167, 10.9333], 10); // Centered between Lucca and Empoli
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const routePoints = [
+      [43.8509, 10.5086], // Lucca
+      [43.8167, 10.6333], // Capannori
+      [43.8161, 10.6764], // Altopascio
+      [43.7414, 10.7986], // Fucecchio
+      [43.7167, 10.9333]  // Empoli
+    ];
+
+    const routeLine = L.polyline(routePoints, { color: 'green' }).addTo(map);
+    map.fitBounds(routeLine.getBounds());
+  </script>
+</body>
+</html>
